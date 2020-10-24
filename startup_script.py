@@ -5,8 +5,8 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-CURRENT_PROJECT_NAME = "DjangoApp"
-NEW_PROJECT_NAME = "DjangoTest"
+CURRENT_PROJECT_NAME = "DjangoTest"
+NEW_PROJECT_NAME = "DjangoTest" #modify this line to your new project name
 
 
 def replace_in_specific_file(filename, find, replace):
