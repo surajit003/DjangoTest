@@ -6,7 +6,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 CURRENT_PROJECT_NAME = "DjangoTest"
-NEW_PROJECT_NAME = "DjangoTest" #modify this line to your new project name
+NEW_PROJECT_NAME = "DjangoDummyApp" #modify this line to your new project name
 
 
 def replace_in_specific_file(filename, find, replace):
@@ -48,8 +48,8 @@ def rename_root_directory(path):
 
 
 def run_on_startup():
-    os.system("pip install -r requirements.txt")
     os.system("pipenv shell")
+    os.system("pip install -r requirements.txt --upgrade")
     # importing it here to make sure Django gets installed first
     from django.core.management.utils import get_random_secret_key
     os.system(">.env")
