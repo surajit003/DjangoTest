@@ -48,8 +48,8 @@ def rename_root_directory(path):
 
 
 def run_on_startup():
-    os.system("pipenv shell")
     os.system("pip install -r requirements.txt")
+    os.system("pipenv shell")
     # importing it here to make sure Django gets installed first
     from django.core.management.utils import get_random_secret_key
 
