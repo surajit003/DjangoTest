@@ -24,7 +24,7 @@ def replace_in_specific_file(filename, find, replace):
         logger.exception(ex)
 
 
-def findReplace(directory, find, replace, filePattern):
+def findReplacerecursively(directory, find, replace, filePattern):
     try:
         for path, dirs, files in os.walk(os.path.abspath(directory)):
             for filename in fnmatch.filter(files, filePattern):
@@ -52,7 +52,6 @@ def run_on_startup():
     os.system("pipenv shell")
     # importing it here to make sure Django gets installed first
     from django.core.management.utils import get_random_secret_key
-
     os.system(">.env")
     with open(".env", "w+") as f:
         f.write("SECRET_KEY={}".format(get_random_secret_key()))
@@ -64,7 +63,7 @@ def run_on_startup():
         # start by replacing CURRENT_PROJECT_NAME in urls.py,settings.py,wsgi.py,asgi.py
         django_app_path = "{}/{}".format(full_path, current_directory_name)
         file_pattern = "*.py"
-        findReplace(
+        findReplacerecursively(
             django_app_path, CURRENT_PROJECT_NAME, NEW_PROJECT_NAME, file_pattern
         )
         try:
