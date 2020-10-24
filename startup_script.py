@@ -24,7 +24,7 @@ def replace_in_specific_file(filename, find, replace):
         logger.exception(ex)
 
 
-def findReplacerecursively(directory, find, replace, filePattern):
+def find_replace_recursively(directory, find, replace, filePattern):
     try:
         for path, dirs, files in os.walk(os.path.abspath(directory)):
             for filename in fnmatch.filter(files, filePattern):
@@ -63,7 +63,7 @@ def run_on_startup():
         # start by replacing CURRENT_PROJECT_NAME in urls.py,settings.py,wsgi.py,asgi.py
         django_app_path = "{}/{}".format(full_path, current_directory_name)
         file_pattern = "*.py"
-        findReplacerecursively(
+        find_replace_recursively(
             django_app_path, CURRENT_PROJECT_NAME, NEW_PROJECT_NAME, file_pattern
         )
         try:
