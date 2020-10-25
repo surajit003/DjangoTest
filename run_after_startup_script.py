@@ -19,6 +19,10 @@ def run_on_startup():
     os.system('rm -rf .git')
     os.system('git init')
     os.system("pre-commit install")
+    with open(".gitignore","a") as f:
+        f.write('startup_script.py')
+        f.write('\n')
+        f.write('run_after_startup_script.py')
 
 
 if __name__ == "__main__":
