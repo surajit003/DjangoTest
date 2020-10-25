@@ -17,6 +17,7 @@ def run_on_startup():
     with open(".env", "w+") as f:
         f.write("SECRET_KEY={}".format(get_random_secret_key()))
     os.system('rm -rf .git')
+    os.system('git init')
     os.system("pre-commit install")
 
 
