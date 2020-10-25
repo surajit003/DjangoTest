@@ -5,7 +5,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-CURRENT_PROJECT_NAME = "DjangoTestAppNewApp"
+CURRENT_PROJECT_NAME = "DjangoTest"
 NEW_PROJECT_NAME = "DjangoTest"  # modify this line to your new project name
 
 
