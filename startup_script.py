@@ -63,8 +63,8 @@ def run_on_startup():
             os.rename(CURRENT_PROJECT_NAME, NEW_PROJECT_NAME)
         except FileNotFoundError as ex:
             logger.exception(ex)
-    replace_in_specific_file("manage.py", CURRENT_PROJECT_NAME, NEW_PROJECT_NAME)
-    rename_root_directory(full_path)
+        replace_in_specific_file("manage.py", CURRENT_PROJECT_NAME, NEW_PROJECT_NAME)
+        rename_root_directory(full_path)
 
 
 if __name__ == "__main__":
